@@ -75,4 +75,4 @@ COMMIT
 EOF
 cp /etc/iptables/rules.v4 /etc/iptables/rules.v6
 
-apt-get install 3cxpbx
+apt-get install -y 3cxpbx
