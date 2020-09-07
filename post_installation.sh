@@ -74,3 +74,5 @@ cat > /etc/iptables/rules.v4<<EOF
 COMMIT
 EOF
 cp /etc/iptables/rules.v4 /etc/iptables/rules.v6
+
+apt-get install 3cxpbx
