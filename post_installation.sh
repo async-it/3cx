@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Async IT Sàrl - Switzerland - 2020
+# Jonas Sauge
+
 wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key | apt-key add -
 echo "deb http://downloads-global.3cx.com/downloads/debian stretch main" | tee /etc/apt/sources.list.d/3cxpbx.list
 echo "deb http://downloads-global.3cx.com/downloads/debian stretch-testing main" | tee /etc/apt/sources.list.d/3cxpbx-testing.list
