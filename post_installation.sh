@@ -75,3 +75,4 @@ COMMIT
 EOF
 cp /etc/iptables/rules.v4 /etc/iptables/rules.v6
 wget -O /etc/init.d/3cx_installation.sh https://raw.githubusercontent.com/async-it/3cx/master/3cx_installation.sh
+chmod +x /etc/init.d/3cx_installation.sh
