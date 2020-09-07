@@ -8,7 +8,7 @@ echo "deb http://downloads-global.3cx.com/downloads/debian stretch main" | tee /
 echo "deb http://downloads-global.3cx.com/downloads/debian stretch-testing main" | tee /etc/apt/sources.list.d/3cxpbx-testing.list
 apt update -y
 apt install -y net-tools dphys-swapfile
-username=$(getent passwd "$uid" | cut -d: -f1)
+username=$(getent passwd "1000" | cut -d: -f1)
 echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
 mkdir /etc/iptables
 cat > /etc/iptables/rules.v4<<EOF
