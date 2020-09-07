@@ -74,5 +74,4 @@ cat > /etc/iptables/rules.v4<<EOF
 COMMIT
 EOF
 cp /etc/iptables/rules.v4 /etc/iptables/rules.v6
-
-apt-get install -y 3cxpbx
+wget -O /etc/init.d/3cx_installation.sh https://raw.githubusercontent.com/async-it/3cx/master/3cx_installation.sh
