@@ -7,7 +7,7 @@ wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key | apt-key a
 echo "deb http://downloads-global.3cx.com/downloads/debian stretch main" | tee /etc/apt/sources.list.d/3cxpbx.list
 echo "deb http://downloads-global.3cx.com/downloads/debian stretch-testing main" | tee /etc/apt/sources.list.d/3cxpbx-testing.list
 apt update -y
-apt install -y net-tools dphys-swapfile
+apt install -y net-tools dphys-swapfile snmpd
 username=$(getent passwd "1000" | cut -d: -f1)
 echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
 mkdir /etc/iptables
@@ -19,6 +19,8 @@ cat > /etc/iptables/rules.v4<<EOF
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -m conntrack --ctstate INVALID -j DROP
+-A INPUT -p tcp -m tcp --dport 161 -j ACCEPT
+-A INPUT -p udp -m udp --dport 162 -j ACCEPT
 -4 -A INPUT -s 127.0.0.0/8 ! -i lo -j DROP
 -6 -A INPUT -s ::1/128 ! -i lo -j DROP
 -4 -A INPUT -d 224.0.1.75 -j ACCEPT
