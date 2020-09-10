@@ -19,7 +19,7 @@ cat > /etc/iptables/rules.v4<<EOF
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -m conntrack --ctstate INVALID -j DROP
--A INPUT -p tcp -m tcp --dport 161 -j ACCEPT
+-A INPUT -p udp -m udp --dport 161 -j ACCEPT
 -A INPUT -p udp -m udp --dport 162 -j ACCEPT
 -4 -A INPUT -s 127.0.0.0/8 ! -i lo -j DROP
 -6 -A INPUT -s ::1/128 ! -i lo -j DROP
