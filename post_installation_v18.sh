@@ -18,7 +18,7 @@ chmod 600 /swap
 mkswap /swap
 swapon /swap
 echo "vm.swappiness=1" > /etc/sysctl.d/swappiness.conf
-echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+echo "/swap swap swap defaults 0 0" >> /etc/fstab
 sysctl vm.swappiness=1
 swapoff -a
 swapon -a
