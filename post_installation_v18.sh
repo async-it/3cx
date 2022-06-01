@@ -25,4 +25,3 @@ swapon -a
 " >> /tmp/3cxpostinstall.sh
 chmod +x /tmp/3cxpostinstall.sh
 bash /tmp/3cxpostinstall.sh
-
