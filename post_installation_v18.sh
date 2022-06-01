@@ -13,12 +13,7 @@ echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
 # wget -O /tmp/3cxpostinstall.sh http://downloads.3cx.com/downloads/debian9iso/post-install_10.4.0.txt
 wget -O /tmp/3cxpostinstall.sh http://downloads-global.3cx.com/downloads/debian10iso/post-install_10.11.0_0cf5fcb.txt
 echo "apt update -y && apt upgrade -y
-dd if=/dev/zero of=/swap bs=1024 count=1048576
-chmod 600 /swap
-mkswap /swap
-swapon /swap
 echo "vm.swappiness=1" > /etc/sysctl.d/swappiness.conf
-echo "/swap swap swap defaults 0 0" >> /etc/fstab
 sysctl vm.swappiness=1
 swapoff -a
 swapon -a
