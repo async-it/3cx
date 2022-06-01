@@ -17,7 +17,11 @@ dd if=/dev/zero of=/swap bs=1024 count=1048576
 chmod 600 /swap
 mkswap /swap
 swapon /swap
+echo "vm.swappiness=1" > /etc/sysctl.d/swappiness.conf
 echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+sysctl vm.swappiness=1
+swapoff -a
+swapon -a
 " >> /tmp/3cxpostinstall.sh
 chmod +x /tmp/3cxpostinstall.sh
 bash /tmp/3cxpostinstall.sh
