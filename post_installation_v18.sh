@@ -13,3 +13,5 @@ echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
 wget -O /tmp/3cxpostinstall.sh http://downloads.3cx.com/downloads/debian9iso/post-install_10.4.0.txt
 chmod +x /tmp/3cxpostinstall.sh
 bash /tmp/3cxpostinstall.sh
+apt update -y
+apt upgrade -y
