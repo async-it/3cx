@@ -14,7 +14,7 @@ echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
 wget -O /tmp/3cxpostinstall.sh http://downloads-global.3cx.com/downloads/debian10iso/post-install_10.11.0_0cf5fcb.txt
 echo "apt update -y && apt upgrade -y
 dd if=/dev/zero of=/swap bs=1024 count=1048576
-chmod 600 /swapfile
+chmod 600 /swap
 mkswap /swap
 swapon /swap
 echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
