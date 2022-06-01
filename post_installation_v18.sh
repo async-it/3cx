@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Async IT Sàrl - Switzerland - 2021
+# Async IT Sàrl - Switzerland - 2022
 # Jonas Sauge
 
 # 3CX V18 post installation based on debian 10
