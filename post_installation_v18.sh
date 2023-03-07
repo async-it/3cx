@@ -8,6 +8,8 @@
 apt update -y
 username=$(getent passwd "1000" | cut -d: -f1)
 echo "$username   ALL=(ALL:ALL) ALL" >> /etc/sudoers
+# Install kbd to have /bin/openvt
+apt install kbd -y
 
 # Running 3CX official post-installation script:
 # wget -O /tmp/3cxpostinstall.sh http://downloads.3cx.com/downloads/debian9iso/post-install_10.4.0.txt
